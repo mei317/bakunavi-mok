@@ -510,7 +510,7 @@ li {
   font-weight: 600;
 }
 .p-searchArea__title {
-  color: var(--color-pink);
+  color: var(--color-pink-100);
   font-size: var(--font-size-s);
 }
 .p-searchArea__list {
