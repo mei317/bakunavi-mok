@@ -387,6 +387,7 @@ li {
 }
 .c-tag.-medium span {
   font-size: var(--font-size-xxs);
+  color: #3f3f42;
 }
 .c-tag.-mini {
   padding: 0.125rem 0.5rem;
