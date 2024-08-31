@@ -475,6 +475,11 @@ li {
   display: flex;
   margin-top: 0.5rem;
   gap: 1rem;
+  font-weight: 600;
+}
+
+.p-mainContents__item p {
+  font-weight: 600;
 }
 .p-mainContents__item.-column {
   flex-direction: column;
