@@ -382,9 +382,7 @@ li {
 .c-tag.-large {
   padding: 0.375rem 0.8125rem;
 }
-.c-tag.-large.-side-pd- {
-  padding: 0 0.625rem;
-}
+
 .c-tag.-large span {
   font-size: var(--font-size-m);
 }
