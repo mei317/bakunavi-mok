@@ -346,7 +346,7 @@ li {
   border: 0.0625rem solid var(--color-pink-100);
   border-radius: 0.625rem;
   background: #fff;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-s);
 }
 .c-input.-text input::-moz-placeholder {
   color: var(--color-gray);
@@ -422,7 +422,6 @@ li {
 }
 .c-text.-title {
   font-weight: 600;
-  font-size: 1.125rem;
 }
 .c-text.-size-xxs {
   font-size: 0.625rem;
