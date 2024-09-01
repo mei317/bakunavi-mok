@@ -380,7 +380,7 @@ li {
   background: var(--color-white);
 }
 .c-tag.-large {
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.875rem;
 }
 
 .c-tag.-large span {
