@@ -261,9 +261,29 @@ li {
   background: var(--color-purple-200);
   text-align: center;
 }
+.l-main {
+  padding: 2.5rem 1.25rem 0.625rem;
+}
+.l-main__sidebar {
+  display: none;
+}
 .l-wrapper {
   width: 100%;
   padding-top: 2rem;
+}
+.l-page404 {
+  min-height: 90vh;
+  padding: 2.5rem;
+  background: var(--color-purple-200);
+  text-align: center;
+}
+.l-page404__title {
+  font-weight: 600;
+  font-size: 10rem;
+}
+.l-page404__text {
+  font-weight: 600;
+  font-size: 2rem;
 }
 .c-button {
   box-sizing: border-box;
@@ -329,6 +349,15 @@ li {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+.c-icon.-pin:before {
+  content: "";
+}
+.c-icon.-link:before {
+  content: "";
+}
+.c-icon.-time:before {
+  content: "";
+}
 .c-image {
   max-width: 100%;
   height: 100%;
@@ -382,7 +411,6 @@ li {
 .c-tag.-large {
   padding: 0.25rem 0.875rem;
 }
-
 .c-tag.-large span {
   font-size: var(--font-size-m);
 }
@@ -446,6 +474,9 @@ li {
 .c-text.-size-xxxl {
   font-size: 1.125rem;
 }
+.c-text.-size-info {
+  font-size: 0.8rem;
+}
 .c-text.-bold {
   font-weight: 600;
 }
@@ -458,7 +489,7 @@ li {
   white-space: nowrap;
 }
 .p-mainContents {
-  padding: 0.625rem 1.25rem 2.5rem;
+  padding: 0.625rem 0 2.5rem;
 }
 .p-mainContents__list {
   display: flex;
@@ -513,9 +544,6 @@ li {
 .p-mainContents__item li:first-child {
   margin-top: 0;
 }
-.p-mainHeader {
-  padding: 2.5rem 1.25rem 0.625rem;
-}
 .p-mainHeader__list {
   display: flex;
   flex-wrap: wrap;
@@ -523,6 +551,7 @@ li {
   gap: 0.75rem;
 }
 .p-panel {
+  min-height: 100%;
   padding: 1.5rem 0.75rem;
   border-radius: 1.25rem;
   background: var(--color-white);
@@ -573,6 +602,9 @@ li {
 .u-flex.-flex-column {
   flex-direction: column;
 }
+.u-flex.-gap-4 {
+  gap: 0.25rem;
+}
 .u-flex.-gap-8 {
   gap: 0.5rem;
 }
@@ -615,6 +647,9 @@ li {
 .u-mb-32 {
   margin-bottom: 2rem;
 }
+.u-ml-4 {
+  margin-left: 0.25rem;
+}
 .u-ml-24 {
   margin-left: 1.5rem;
 }
@@ -632,4 +667,22 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 960px) {
+  .l-header {
+    min-height: 12.5rem;
+  }
+  .l-main {
+    display: flex;
+    padding: 3.5rem 1.5rem 0.625rem;
+    gap: 1.5rem;
+  }
+  .l-main__sidebar {
+    display: block;
+    flex: 1;
+    min-width: 12.5rem;
+  }
+  .l-main__center {
+    width: 60%;
+  }
 }
