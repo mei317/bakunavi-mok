@@ -17,7 +17,7 @@
     <div class="l-wrapper">
       
 <header class="l-header">
-  <h1 class="c-text -logo">BakuNavi<br/>お笑いライブ検索サイト</h1>
+  <h1 class="c-text -logo">BakuNavi<br/>関東圏<br/>お笑いライブ検索サイト</h1>
 </header>
       
 <main class="l-main">
@@ -73,7 +73,7 @@
                 <div class="p-modal__inner">
                   <div class="p-modal-header">
                     <div class="p-modal-close c-icon -close -pointer js-modalBase-close"></div>
-                    <p class="c-text -size-l -bold -center" style="margin-top: 4px">絞り込み条件</p>
+                    <p class="c-text -size-l -bold -center u-mt-4">絞り込み条件</p>
                   </div>
                   <div class="p-modal-content">
                     <ul class="p-modal-content__list">
@@ -147,11 +147,8 @@
                         <p class="c-text -bold">料金</p>
                         <div class="p-panel -modalSearch u-mt-8">
                           <div class="c-range js-rangeSetting">
-                            <div class="u-flex -flex-center -align-center -gap-16">
-                              <p>～</p>
-                              <div class="c-range-value">
-                                <input class="c-range-input js-rangeSetting-value" type="text" placeholder="0" value="0" min="0" max="10000"/>
-                              </div>
+                            <div class="u-flex -flex-center -align-center -gap-4">
+                              <p class="c-range-value js-rangeSetting-value">5000</p>
                               <p>円</p>
                             </div>
                             <input class="c-range-slider js-rangeSetting-slider" type="range" name="speed" min="0" max="10000" step="1000" list="fee"/>
@@ -170,9 +167,9 @@
         </div>
       </div>
       <div class="p-mainHeader__list">
-        <div class="c-tag -medium -cancel -pr-24 -bg-white" data-define="define-uesutorando"><span>NONSTYLE</span><img src="public/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
-        <div class="c-tag -medium -cancel -pr-24 -bg-white" data-define="define-241008"><span>2024年8月26日(月)</span><img src="public/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
-        <div class="c-tag -medium -cancel -pr-24 -bg-white" data-define="define-shibuya"><span>江東</span><img src="public/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+        <div class="c-tag -medium -cancel -bg-white" data-define="define-uesutorando"><span>NONSTYLE</span><img src="/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+        <div class="c-tag -medium -cancel -bg-white" data-define="define-241008"><span>2024年8月26日(月)</span><img src="/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+        <div class="c-tag -medium -cancel -bg-white" data-define="define-shibuya"><span>江東</span><img src="/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
       </div>
     </div>
     <div class="p-mainContents js-dataInsert">
@@ -230,60 +227,6 @@
               </li>
               <li class="p-mainContents__item">
                 <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -ellipsis -size-xs js-template-item-ticketUrl" href="#" target="_blank"></a>
-              </li>
-            </ul>
-          </li>
-          <li class="p-mainContents__menu">
-            <div class="p-mainContents__head">
-              <p class="c-text -size-xxl">2024年8月26日(月)</p>
-              <p class="c-text -size-m">開演&nbsp;19:00</p>
-            </div>
-            <ul class="p-mainContents__info">
-              <li class="p-mainContents__item -gap-8">
-                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-area"></span></div>
-                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-eventer"></span></div>
-              </li>
-              <li class="p-mainContents__item -mt-16">
-                <p class="c-text -title js-template-item-eventName" data-event-name="data-event-name"></p>
-              </li>
-              <li class="p-mainContents__item -mt-16">
-                <p class="c-text -bold -size-xs">会場</p>
-                <p class="c-text -size-info js-template-item-venue"></p>
-              </li>
-              <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs">時間</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info">開場&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-open"></p>
-                </div>
-                <p class="c-text -bold -size-xs">|</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info">開演&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-start"></p>
-                </div>
-              </li>
-              <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs">料金</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info">当日&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-fee"></p>
-                  <p class="c-text -size-info">円</p>
-                </div>
-                <p class="c-text -bold -size-xs">|</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info">前売&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-currentFee"></p>
-                  <p class="c-text -size-info">円</p>
-                </div>
-              </li>
-              <li class="p-mainContents__item -column">
-                <p class="c-text -bold -size-xs"></p>
-                <div class="u-flex -flex-wrap -gap-8 js-template-comedianList">
-                  <template class="js-template-item-comedianItem"><a class="c-tag -bg-pink-200 -mini" href="#" target="_blank"><span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian"></span></a></template>
-                </div>
-              </li>
-              <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -size-xs js-template-item-ticketUrl" href="#" target="_blank"></a>
               </li>
             </ul>
           </li>

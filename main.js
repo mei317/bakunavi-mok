@@ -1,12 +1,12 @@
-var d = Object.defineProperty;
-var c = (l, e, o) => (e in l ? d(l, e, { enumerable: !0, configurable: !0, writable: !0, value: o }) : (l[e] = o));
-var s = (l, e, o) => c(l, typeof e != "symbol" ? e + "" : e, o);
+var r = Object.defineProperty;
+var c = (n, e, o) => (e in n ? r(n, e, { enumerable: !0, configurable: !0, writable: !0, value: o }) : (n[e] = o));
+var i = (n, e, o) => c(n, typeof e != "symbol" ? e + "" : e, o);
 (function () {
   const e = document.createElement("link").relList;
   if (e && e.supports && e.supports("modulepreload")) return;
-  for (const t of document.querySelectorAll('link[rel="modulepreload"]')) n(t);
+  for (const t of document.querySelectorAll('link[rel="modulepreload"]')) l(t);
   new MutationObserver((t) => {
-    for (const a of t) if (a.type === "childList") for (const r of a.addedNodes) r.tagName === "LINK" && r.rel === "modulepreload" && n(r);
+    for (const a of t) if (a.type === "childList") for (const d of a.addedNodes) d.tagName === "LINK" && d.rel === "modulepreload" && l(d);
   }).observe(document, { childList: !0, subtree: !0 });
   function o(t) {
     const a = {};
@@ -17,7 +17,7 @@ var s = (l, e, o) => c(l, typeof e != "symbol" ? e + "" : e, o);
       a
     );
   }
-  function n(t) {
+  function l(t) {
     if (t.ep) return;
     t.ep = !0;
     const a = o(t);
@@ -26,16 +26,23 @@ var s = (l, e, o) => c(l, typeof e != "symbol" ? e + "" : e, o);
 })();
 class h {
   constructor(e) {
-    s(this, "modalNode");
-    s(this, "dialog");
-    s(this, "modalOpenBtn");
-    s(this, "modalCloseBtn");
-    s(this, "modalOverlay");
+    i(this, "modalNode");
+    i(this, "dialog");
+    i(this, "modalOpenBtn");
+    i(this, "modalCloseBtn");
+    i(this, "modalOverlay");
+    i(this, "body");
+    i(this, "ua");
+    i(this, "isiOS");
+    i(this, "scrollPosition", 0);
     (this.modalNode = e.modalNode),
       (this.dialog = this.modalNode.querySelector(".js-modalBase-dialog")),
       (this.modalOpenBtn = this.modalNode.querySelector(".js-modalBase-open")),
       (this.modalCloseBtn = this.modalNode.querySelectorAll(".js-modalBase-close")),
       (this.modalOverlay = this.modalNode.querySelector(".u-overlay")),
+      (this.body = document.querySelector("body")),
+      (this.ua = window.navigator.userAgent.toLowerCase()),
+      (this.isiOS = this.ua.indexOf("iphone") > -1 || this.ua.indexOf("ipad") > -1 || (this.ua.indexOf("macintosh") > -1 && "ontouchend" in document)),
       this.init();
   }
   init() {
@@ -44,18 +51,19 @@ class h {
   showModal() {
     this.modalOpenBtn != null &&
       this.modalOpenBtn.addEventListener("click", () => {
-        if (this.dialog && this.modalOverlay) {
-          (document.body.style.pointerEvents = "none"), (this.dialog.style.pointerEvents = "auto");
+        if (this.body && this.dialog && this.modalOverlay) {
+          (this.body.style.pointerEvents = "none"), (this.dialog.style.pointerEvents = "auto");
           const e = this.dialog.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),
             o = e[0],
-            n = e[e.length - 1];
+            l = e[e.length - 1];
           this.dialog.addEventListener("keydown", (t) => {
-            (t.key === "Tab" || t.keyCode === 9) && (t.shiftKey ? document.activeElement === o && (n.focus(), t.preventDefault()) : document.activeElement === n && (o.focus(), t.preventDefault()));
+            (t.key === "Tab" || t.keyCode === 9) && (t.shiftKey ? document.activeElement === o && (l.focus(), t.preventDefault()) : document.activeElement === l && (o.focus(), t.preventDefault()));
           }),
             o.focus(),
             this.dialog.classList.add("-show"),
-            document.body.classList.add("-hidden"),
-            this.modalOverlay.classList.add("-show");
+            this.modalOverlay.classList.add("-show"),
+            this.body && this.body.classList.add("-hidden"),
+            this.bodyFixedOn();
         }
       });
   }
@@ -63,16 +71,28 @@ class h {
     this.modalCloseBtn.forEach((e) => {
       e &&
         e.addEventListener("click", () => {
-          (document.body.style.pointerEvents = "auto"),
-            this.dialog && this.modalOverlay && (this.dialog.classList.remove("-show"), document.body.classList.remove("-hidden"), this.modalOverlay.classList.remove("-show"));
+          this.body &&
+            ((this.body.style.pointerEvents = "auto"),
+            this.dialog && this.modalOverlay && (this.dialog.classList.remove("-show"), this.modalOverlay.classList.remove("-show"), this.body && this.body.classList.remove("-hidden")),
+            this.bodyFixedOff());
         });
     });
+  }
+  bodyFixedOn() {
+    this.isiOS
+      ? ((this.scrollPosition = window.pageYOffset), this.body && ((this.body.style.position = "fixed"), (this.body.style.top = `-${this.scrollPosition}px`)))
+      : this.body && this.body.classList.add("-hidden");
+  }
+  bodyFixedOff() {
+    this.isiOS
+      ? (this.body && (this.body.style.removeProperty("position"), this.body.style.removeProperty("top")), window.scrollTo(0, this.scrollPosition))
+      : this.body && this.body.classList.remove("-hidden");
   }
 }
 class u {
   constructor(e) {
-    s(this, "areaNode");
-    s(this, "areaSelectBtn");
+    i(this, "areaNode");
+    i(this, "areaSelectBtn");
     (this.areaNode = e.area), (this.areaSelectBtn = this.areaNode.querySelectorAll(".js-areaSearch-btn")), this.init();
   }
   init() {
@@ -86,11 +106,11 @@ class u {
     });
   }
 }
-class m {
+class f {
   constructor(e) {
-    s(this, "radioNode");
-    s(this, "radios");
-    s(this, "lastChecked", null);
+    i(this, "radioNode");
+    i(this, "radios");
+    i(this, "lastChecked", null);
     (this.radioNode = e.radioNode), (this.radios = this.radioNode.querySelectorAll(".js-radioCheck-radio")), this.init();
   }
   init() {
@@ -104,11 +124,11 @@ class m {
     });
   }
 }
-class f {
+class y {
   constructor(e) {
-    s(this, "inputNode");
-    s(this, "min");
-    s(this, "max");
+    i(this, "inputNode");
+    i(this, "min");
+    i(this, "max");
     (this.inputNode = e.inputNode), (this.min = e.min), (this.max = e.max), this.init();
   }
   init() {
@@ -121,11 +141,11 @@ class f {
     });
   }
 }
-class g {
+class m {
   constructor(e) {
-    s(this, "rangeNode");
-    s(this, "rangeValue");
-    s(this, "slider");
+    i(this, "rangeNode");
+    i(this, "rangeValue");
+    i(this, "slider");
     (this.rangeNode = e.rangeNode), (this.rangeValue = this.rangeNode.querySelector(".js-rangeSetting-value")), (this.slider = this.rangeNode.querySelector(".js-rangeSetting-slider")), this.init();
   }
   init() {
@@ -133,25 +153,25 @@ class g {
   }
   updateValue() {
     this.rangeNode.addEventListener("input", () => {
-      this.rangeValue.value = this.slider.value;
+      this.rangeValue.textContent = this.slider.value;
     });
   }
 }
 document.addEventListener("DOMContentLoaded", () => {
-  const l = document;
-  new y(l);
+  const n = document;
+  new g(n);
 });
-class y {
+class g {
   constructor(e) {
     const o = e.querySelectorAll(".js-modalBase");
-    for (let i = 0; i < o.length; i++) new h({ modalNode: o[i] });
-    const n = e.querySelectorAll(".js-areaSearch");
-    for (let i = 0; i < n.length; i++) new u({ areaNode: n[i] });
+    for (let s = 0; s < o.length; s++) new h({ modalNode: o[s] });
+    const l = e.querySelectorAll(".js-areaSearch");
+    for (let s = 0; s < l.length; s++) new u({ areaNode: l[s] });
     const t = e.querySelectorAll(".js-radioCheck");
-    for (let i = 0; i < t.length; i++) new m({ radioNode: t[i] });
+    for (let s = 0; s < t.length; s++) new f({ radioNode: t[s] });
     const a = e.querySelectorAll(".js-inputValidation");
-    for (let i = 0; i < a.length; i++) new f({ inputNode: a[i], min: 1, max: 1e4 });
-    const r = e.querySelectorAll(".js-rangeSetting");
-    for (let i = 0; i < r.length; i++) new g({ rangeNode: r[i] });
+    for (let s = 0; s < a.length; s++) new y({ inputNode: a[s], min: 1, max: 1e4 });
+    const d = e.querySelectorAll(".js-rangeSetting");
+    for (let s = 0; s < d.length; s++) new m({ rangeNode: d[s] });
   }
 }
