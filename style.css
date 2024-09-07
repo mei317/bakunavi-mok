@@ -327,6 +327,7 @@ li {
   line-height: 1.5rem;
   white-space: nowrap;
   cursor: pointer;
+  font-weight: 100;
 }
 .c-radio-label:before {
   display: block;
