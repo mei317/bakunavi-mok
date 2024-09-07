@@ -10,7 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="/src/scss/home.scss"/>
+    <script type="module" crossorigin src="/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/style.css">
   </head>
   <body>
     <div class="l-wrapper">
@@ -25,7 +27,6 @@
   </aside>
   <article class="l-main__center">
     <div class="p-mainHeader">
-
       <div class="p-panel">
         <div class="p-searchArea">
           <div class="p-searchArea__title c-icon -search">
@@ -57,7 +58,7 @@
               </p>
             </div>
             <div class="p-searchArea__menu">
-              <p>キーワードで探す</p>
+              <p>芸人で探す</p>
               <div class="p-searchArea__item">
                 <div class="c-input -text">
                   <input type="text"/>
@@ -81,162 +82,62 @@
     <div class="p-mainContents js-dataInsert">
       <p class="c-text -bold -size-ss">1～30件のお笑いライブ情報</p>
       <ul class="p-mainContents__list js-template-list">
+        <template class="js-template-item">
           <li class="p-mainContents__menu">
             <div class="p-mainContents__head">
-              <p class="c-text -size-xxl">2024年9月4日(水)</p>
-              <p class="c-text">開演&nbsp;14:00</p>
+              <p class="c-text -size-xxl js-template-item-eventDate"></p>
+              <p class="c-text -size-m js-template-item-openingAndStartTime"></p>
             </div>
             <ul class="p-mainContents__info">
               <li class="p-mainContents__item -gap-8">
-                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-area">東京都</span></div>
-                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-eventer">吉本興業</span></div>
+                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-area"></span></div>
+                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-eventer"></span></div>
               </li>
               <li class="p-mainContents__item -mt-16">
-                <p class="c-text -title js-template-item-eventName" data-event-name="data-event-name">ルミネtheよしもと&nbsp;平日１４時の部プラス</p>
-              </li>
-              <li class="p-mainContents__item -mt-16">
-                <p class="c-text -bold -size-xs">会場</p>
-                <p class="c-text -size-info js-template-item-venue">ルミネtheよしもと</p>
-              </li>
-              <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs">時間</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info">開場&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-open">14:00</p>
-                </div>
-                <p class="c-text -bold -size-xs">|</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info">開演&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-start">13:30</p>
-                </div>
-              </li>
-              <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs">料金</p>
-                <div class="u-flex">
-                  <p class="c-text -size-info js-template-item-fee">3,300</p>
-                  <p class="c-text -size-info">円</p>
-                </div>
-                <div class="u-flex">
-                  <p class="c-text -size-info">(&nbsp;前売&nbsp;</p>
-                  <p class="c-text -size-info js-template-item-currentFee">2,800</p>
-                  <p class="c-text -size-info">円&nbsp;)</p>
-                </div>
-              </li>
-              <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -ellipsis -size-xs js-template-item-ticketUrl" href="#" target="_blank">https://yoshimoto.funity.jp/search/?kaien_date_type=2024%2F09%2F05&kaijyo_code=999050&kaien_time=14:00&utm_medium=schedule&utm_source=lumine&utm_campaign=%E3%83%AB%E3%83%9F%E3%83%8Dthe%E3%82%88%E3%81%97%E3%82%82%E3%81%A8%E3%80%80%E5%B9%B3%E6%97%A5%EF%BC%91%EF%BC%94%E6%99%82%E3%81%AE%E9%83%A8</a>
-              </li>
-              <li class="p-mainContents__item -column">
-                <p class="c-text -bold -size-xs">出演</p>
-                <div class="u-flex -flex-wrap -gap-8 js-template-comedianList">
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">村上ショージ</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ロザン</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ライス</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">サルゴリラ</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">金属バット</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">マユリカ</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ぼる塾</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ナイチンゲールダンス</span>
-                  </a>
-                </div>
-              </li>
-            </ul>
-
-          </li>
-      </ul>
-
-      <ul class="p-mainContents__list js-template-list u-mt-16">
-          <li class="p-mainContents__menu">
-            <div class="p-mainContents__head">
-              <p class="c-text -size-xxl">2024年9月4日(水)</p>
-              <p class="c-text">開演&nbsp;14:00</p>
-            </div>
-            <ul class="p-mainContents__info">
-              <li class="p-mainContents__item -gap-8">
-                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-area">東京都</span></div>
-                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-eventer">吉本興業</span></div>
-              </li>
-              <li class="p-mainContents__item -mt-16">
-                <p class="c-text -title js-template-item-eventName" data-event-name="data-event-name">ルミネtheよしもと&nbsp;平日１４時の部プラス</p>
+                <p class="c-text -title js-template-item-eventName" data-event-name="data-event-name"></p>
               </li>
               <li class="p-mainContents__item -mt-16">
                 <p class="c-text -bold -size-xs">会場</p>
-                <p class="c-text -size-info js-template-item-venue">ルミネtheよしもと</p>
+                <p class="c-text -size-info js-template-item-venue"></p>
               </li>
               <li class="p-mainContents__item">
                 <p class="c-text -bold -size-xs">時間</p>
                 <div class="u-flex">
                   <p class="c-text -size-info">開場：</p>
-                  <p class="c-text -size-info js-template-item-open">14:00</p>
+                  <p class="c-text -size-info js-template-item-open"></p>
                 </div>
                 <p class="c-text -bold -size-xs">|</p>
                 <div class="u-flex">
                   <p class="c-text -size-info">開演：</p>
-                  <p class="c-text -size-info js-template-item-start">13:30</p>
+                  <p class="c-text -size-info js-template-item-start"></p>
                 </div>
               </li>
               <li class="p-mainContents__item">
                 <p class="c-text -bold -size-xs">料金</p>
                 <div class="u-flex">
                   <p class="c-text -size-info">前売：</p>
-                  <p class="c-text -size-info js-template-item-fee">3,300</p>
+                  <p class="c-text -size-info js-template-item-fee"></p>
                   <p class="c-text -size-info">円</p>
                 </div>
                 <p class="c-text -bold -size-xs">|</p>
                 <div class="u-flex">
                   <p class="c-text -size-info">当日：</p>
-                  <p class="c-text -size-info js-template-item-currentFee">2,800</p>
-                  <p class="c-text -size-info">円&nbsp;</p>
+                  <p class="c-text -size-info js-template-item-currentFee"></p>
+                  <p class="c-text -size-info">円</p>
                 </div>
               </li>
               <li class="p-mainContents__item">
-                <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -ellipsis -size-xs js-template-item-ticketUrl" href="#" target="_blank">https://yoshimoto.funity.jp/search/?kaien_date_type=2024%2F09%2F05&kaijyo_code=999050&kaien_time=14:00&utm_medium=schedule&utm_source=lumine&utm_campaign=%E3%83%AB%E3%83%9F%E3%83%8Dthe%E3%82%88%E3%81%97%E3%82%82%E3%81%A8%E3%80%80%E5%B9%B3%E6%97%A5%EF%BC%91%EF%BC%94%E6%99%82%E3%81%AE%E9%83%A8</a>
+                <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -ellipsis -size-xs js-template-item-ticketUrl" href="#" target="_blank"></a>
               </li>
               <li class="p-mainContents__item -column">
                 <p class="c-text -bold -size-xs">出演</p>
                 <div class="u-flex -flex-wrap -gap-8 js-template-comedianList">
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">村上ショージ</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ロザン</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ライス</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">サルゴリラ</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">金属バット</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">マユリカ</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ぼる塾</span>
-                  </a>
-                  <a class="c-tag -bg-pink-200 -mini" href="#" target="_blank">
-                    <span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian">ナイチンゲールダンス</span>
-                  </a>
+                  <template class="js-template-item-comedianItem"><a class="c-tag -bg-pink-200 -mini" href="#" target="_blank"><span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian"></span></a></template>
                 </div>
               </li>
             </ul>
           </li>
+        </template>
       </ul>
     </div>
   </article>
