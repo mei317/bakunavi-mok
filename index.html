@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    
+
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -10,9 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/src/scss/home.scss"/>
-    <script type="module" crossorigin src="/main.js"></script>
-    <link rel="stylesheet" crossorigin href="/style.css">
+    <script  src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="l-wrapper">
@@ -23,14 +22,14 @@
       
 <main class="l-main">
   <aside class="l-main__sidebar">
-    <div class="p-panel"></div>
+    <div class="p-panel -bg-none"></div>
   </aside>
   <article class="l-main__center">
     <div class="p-mainHeader">
       <div class="p-panel">
         <div class="p-searchArea">
           <div class="p-searchArea__title c-icon -search">
-            <p class="u-ml-24">ライブを探す</p>
+            <p class="u-ml-24 u-sp-ml-40">お笑いライブを探す</p>
           </div>
           <div class="p-searchArea__list">
             <div class="p-searchArea__menu">
@@ -51,32 +50,129 @@
                   <button class="c-tag -large -bg-pink-100 -font-white" data-day="day-sunday"><span>次の日曜</span></button>
                 </div>
                 <div class="p-searchArea__item -mt-10">
-                  <div class="c-input -text">
-                    <input type="text" placeholder="-日付指定-"/>
+                  <div class="c-input">
+                    <input type="date"/>
                   </div>
                 </div>
               </p>
             </div>
             <div class="p-searchArea__menu">
               <p>芸人で探す</p>
-              <div class="p-searchArea__item">
-                <div class="c-input -text">
-                  <input type="text"/>
+              <div class="p-searchArea__item -fixed">
+                <div class="c-input">
+                  <input type="search" placeholder="芸人を入力"/>
                 </div>
               </div>
             </div>
-            <div class="p-searchArea__menu">
+            <div class="p-searchArea__menu js-modalBase">
               <div class="p-searchArea__item -block">
-                <button class="c-button" type="button"><span class="c-icon -filter">詳細検索</span></button>
+                <button class="c-button js-modalBase-open" type="button"><span class="c-icon -filter">絞り込み検索</span></button>
               </div>
+              <div class="u-overlay"></div>
+              <dialog class="p-modal js-modalBase-dialog">
+                <div class="p-modal__inner">
+                  <div class="p-modal-header">
+                    <div class="p-modal-close c-icon -close -pointer js-modalBase-close"></div>
+                    <p class="c-text -size-xl -bold -center">絞り込み条件</p>
+                  </div>
+                  <div class="p-modal-content">
+                    <ul class="p-modal-content__list">
+                      <li class="p-modal-content__item js-radioCheck">
+                        <p class="c-text -bold">時間帯</p>
+                        <div class="p-panel -modalSearch u-mt-8">
+                          <div class="u-flex -gap-24 -pc-gap-48">
+                            <div class="c-radio">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="time-morning" name="check-time"/>
+                              <label class="c-radio-label" for="time-morning">朝公演</label>
+                            </div>
+                            <div class="c-radio">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="time-daytime" name="check-time"/>
+                              <label class="c-radio-label" for="time-daytime">昼公演</label>
+                            </div>
+                            <div class="c-radio">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="time-night" name="check-time"/>
+                              <label class="c-radio-label" for="time-night">夜公演</label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="p-modal-content__item js-radioCheck">
+                        <p class="c-text -bold">主催</p>
+                        <div class="p-panel -modalSearch u-mt-8">
+                          <div class="u-flex -gap-8-25 -pc-gap-8-0 -flex-wrap">
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-yoshimoto" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-yoshimoto">吉本興業</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-shochiku" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-shochiku">松竹芸能</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-maseki" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-maseki">マセキ芸能社</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-horipuro" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-horipuro">ホリプロコム</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-kdash" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-kdash">ケイダッシュステージ</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-asai" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-asai">浅井企画</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-kpro" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-kpro">K-PRO</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-uc" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-uc">U＆Cプロダクション</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-rasuta" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-rasuta">ラスタ池袋</label>
+                            </div>
+                            <div class="c-radio -div3">
+                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-other" name="check-eventer"/>
+                              <label class="c-radio-label" for="eventer-other">その他</label>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="p-modal-content__item">
+                        <p class="c-text -bold">料金</p>
+                        <div class="p-panel -modalSearch u-mt-8">
+                          <div class="c-range js-rangeSetting">
+                            <div class="u-flex -flex-center -align-center -gap-16">
+                              <p>～</p>
+                              <div class="c-range-value">
+                                <input class="c-range-input js-rangeSetting-value" type="text" placeholder="0" value="0" min="0" max="10000"/>
+                              </div>
+                              <p>円</p>
+                            </div>
+                            <input class="c-range-slider js-rangeSetting-slider" type="range" name="speed" min="0" max="10000" step="1000" list="fee"/>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="p-modal-footer">
+                    <button class="c-button js-modalBase-close" type="button">絞り込み条件を指定</button>
+                  </div>
+                </div>
+              </dialog>
             </div>
           </div>
         </div>
       </div>
       <div class="p-mainHeader__list">
-        <div class="c-tag -medium -pr-24 -bg-white" data-define="define-uesutorando"><span>NONSTYLE</span><span class="c-icon -close"></span></div>
-        <div class="c-tag -medium -pr-24 -bg-white" data-define="define-241008"><span>2024年8月26日(月)</span><span class="c-icon -close"></span></div>
-        <div class="c-tag -medium -pr-24 -bg-white" data-define="define-shibuya"><span>江東</span><span class="c-icon -close"></span></div>
+        <div class="c-tag -medium -cancel -pr-24 -bg-white" data-define="define-uesutorando"><span>NONSTYLE</span><img src="public/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+        <div class="c-tag -medium -cancel -pr-24 -bg-white" data-define="define-241008"><span>2024年8月26日(月)</span><img src="public/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+        <div class="c-tag -medium -cancel -pr-24 -bg-white" data-define="define-shibuya"><span>江東</span><img src="public/tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
       </div>
     </div>
     <div class="p-mainContents js-dataInsert">
@@ -103,37 +199,91 @@
               <li class="p-mainContents__item">
                 <p class="c-text -bold -size-xs">時間</p>
                 <div class="u-flex">
-                  <p class="c-text -size-info">開場：</p>
+                  <p class="c-text -size-info">開場&nbsp;</p>
                   <p class="c-text -size-info js-template-item-open"></p>
                 </div>
                 <p class="c-text -bold -size-xs">|</p>
                 <div class="u-flex">
-                  <p class="c-text -size-info">開演：</p>
+                  <p class="c-text -size-info">開演&nbsp;</p>
                   <p class="c-text -size-info js-template-item-start"></p>
                 </div>
               </li>
               <li class="p-mainContents__item">
                 <p class="c-text -bold -size-xs">料金</p>
                 <div class="u-flex">
-                  <p class="c-text -size-info">前売：</p>
+                  <p class="c-text -size-info">前売&nbsp;</p>
                   <p class="c-text -size-info js-template-item-fee"></p>
                   <p class="c-text -size-info">円</p>
                 </div>
                 <p class="c-text -bold -size-xs">|</p>
                 <div class="u-flex">
-                  <p class="c-text -size-info">当日：</p>
+                  <p class="c-text -size-info">当日&nbsp;</p>
                   <p class="c-text -size-info js-template-item-currentFee"></p>
                   <p class="c-text -size-info">円</p>
+                </div>
+              </li>
+              <li class="p-mainContents__item -column">
+                <p class="c-text -bold -size-xs"></p>
+                <div class="u-flex -flex-wrap -gap-8 js-template-comedianList">
+                  <template class="js-template-item-comedianItem"><a class="c-tag -bg-pink-200 -mini" href="#" target="_blank"><span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian"></span></a></template>
                 </div>
               </li>
               <li class="p-mainContents__item">
                 <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -ellipsis -size-xs js-template-item-ticketUrl" href="#" target="_blank"></a>
               </li>
+            </ul>
+          </li>
+          <li class="p-mainContents__menu">
+            <div class="p-mainContents__head">
+              <p class="c-text -size-xxl">2024年8月26日(月)</p>
+              <p class="c-text -size-m">開演&nbsp;19:00</p>
+            </div>
+            <ul class="p-mainContents__info">
+              <li class="p-mainContents__item -gap-8">
+                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-area"></span></div>
+                <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-eventer"></span></div>
+              </li>
+              <li class="p-mainContents__item -mt-16">
+                <p class="c-text -title js-template-item-eventName" data-event-name="data-event-name"></p>
+              </li>
+              <li class="p-mainContents__item -mt-16">
+                <p class="c-text -bold -size-xs">会場</p>
+                <p class="c-text -size-info js-template-item-venue"></p>
+              </li>
+              <li class="p-mainContents__item">
+                <p class="c-text -bold -size-xs">時間</p>
+                <div class="u-flex">
+                  <p class="c-text -size-info">開場&nbsp;</p>
+                  <p class="c-text -size-info js-template-item-open"></p>
+                </div>
+                <p class="c-text -bold -size-xs">|</p>
+                <div class="u-flex">
+                  <p class="c-text -size-info">開演&nbsp;</p>
+                  <p class="c-text -size-info js-template-item-start"></p>
+                </div>
+              </li>
+              <li class="p-mainContents__item">
+                <p class="c-text -bold -size-xs">料金</p>
+                <div class="u-flex">
+                  <p class="c-text -size-info">当日&nbsp;</p>
+                  <p class="c-text -size-info js-template-item-fee"></p>
+                  <p class="c-text -size-info">円</p>
+                </div>
+                <p class="c-text -bold -size-xs">|</p>
+                <div class="u-flex">
+                  <p class="c-text -size-info">前売&nbsp;</p>
+                  <p class="c-text -size-info js-template-item-currentFee"></p>
+                  <p class="c-text -size-info">円</p>
+                </div>
+              </li>
               <li class="p-mainContents__item -column">
-                <p class="c-text -bold -size-xs">出演</p>
+                <p class="c-text -bold -size-xs"></p>
                 <div class="u-flex -flex-wrap -gap-8 js-template-comedianList">
                   <template class="js-template-item-comedianItem"><a class="c-tag -bg-pink-200 -mini" href="#" target="_blank"><span class="c-text -size-xs -bold js-template-item-comedian" data-comedian="data-comedian"></span></a></template>
                 </div>
+              </li>
+              <li class="p-mainContents__item">
+                <p class="c-text -bold -size-xs -nowrap">チケットURL</p><a class="c-text -size-xs js-template-item-ticketUrl" href="#" target="_blank"></a>
               </li>
             </ul>
           </li>
@@ -142,7 +292,7 @@
     </div>
   </article>
   <aside class="l-main__sidebar">
-    <div class="p-panel"></div>
+    <div class="p-panel -bg-none"></div>
   </aside>
 </main>
       
