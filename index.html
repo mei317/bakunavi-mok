@@ -5,14 +5,15 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="author" content=""/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<script src="main.js"></script>
-<link rel="stylesheet"  href="style.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="js-modalBase">
     <div class="l-wrapper">
       
 <header class="l-header">
@@ -48,9 +49,9 @@
                   <button class="c-tag -large -bg-pink-100 -font-white" data-day="day-saturday"><span>次の土曜</span></button>
                   <button class="c-tag -large -bg-pink-100 -font-white" data-day="day-sunday"><span>次の日曜</span></button>
                 </div>
-                <div class="p-searchArea__item">
+                <div class="p-searchArea__item js-inputPlaceholder">
                   <div class="c-input">
-                    <input type="date"/>
+                    <input class="js-inputPlaceholder-input" type="date"/>
                   </div>
                 </div>
               </p>
@@ -63,122 +64,33 @@
                 </div>
               </div>
             </div>
-            <div class="p-searchArea__menu js-modalBase">
+            <div class="p-searchArea__menu">
               <div class="p-searchArea__item -block">
                 <button class="c-button js-modalBase-open" type="button"><span class="c-icon -filter">絞り込み検索</span></button>
               </div>
-              <div class="u-overlay"></div>
-              <dialog class="p-modal js-modalBase-dialog">
-                <div class="p-modal__inner">
-                  <div class="p-modal-header">
-                    <div class="p-modal-close c-icon -close -pointer js-modalBase-close"></div>
-                    <p class="c-text -size-l -bold -center u-mt-4">絞り込み条件</p>
-                  </div>
-                  <div class="p-modal-content">
-                    <ul class="p-modal-content__list">
-                      <li class="p-modal-content__item js-radioCheck">
-                        <p class="c-text -bold">時間帯</p>
-                        <div class="p-panel -modalSearch u-mt-8">
-                          <div class="u-flex -gap-24 -pc-gap-48">
-                            <div class="c-radio">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="time-morning" name="check-time"/>
-                              <label class="c-radio-label" for="time-morning">朝公演</label>
-                            </div>
-                            <div class="c-radio">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="time-daytime" name="check-time"/>
-                              <label class="c-radio-label" for="time-daytime">昼公演</label>
-                            </div>
-                            <div class="c-radio">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="time-night" name="check-time"/>
-                              <label class="c-radio-label" for="time-night">夜公演</label>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="p-modal-content__item js-radioCheck">
-                        <p class="c-text -bold">主催</p>
-                        <div class="p-panel -modalSearch u-mt-8">
-                          <div class="u-flex -gap-12-25 -pc-gap-8-0 -flex-wrap">
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-yoshimoto" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-yoshimoto">吉本興業</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-shochiku" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-shochiku">松竹芸能</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-maseki" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-maseki">マセキ芸能社</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-horipuro" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-horipuro">ホリプロコム</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-kdash" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-kdash">ケイダッシュステージ</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-asai" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-asai">浅井企画</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-kpro" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-kpro">K-PRO</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-uc" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-uc">U＆Cプロダクション</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-rasuta" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-rasuta">ラスタ池袋</label>
-                            </div>
-                            <div class="c-radio -div3">
-                              <input class="c-radio-input js-radioCheck-radio" type="radio" id="eventer-other" name="check-eventer"/>
-                              <label class="c-radio-label" for="eventer-other">その他</label>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="p-modal-content__item">
-                        <p class="c-text -bold">料金</p>
-                        <div class="p-panel -modalSearch u-mt-8">
-                          <div class="c-range js-rangeSetting">
-                            <div class="u-flex -flex-center -align-center -gap-4">
-                              <p class="c-range-value js-rangeSetting-value">5000</p>
-                              <p>円</p>
-                            </div>
-                            <input class="c-range-slider js-rangeSetting-slider" type="range" name="speed" min="0" max="10000" step="500" list="fee"/>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="p-modal-footer">
-                    <button class="c-button js-modalBase-close" type="button">絞り込み条件を指定</button>
-                  </div>
-                </div>
-              </dialog>
             </div>
           </div>
         </div>
       </div>
-      <div class="p-mainHeader__list">
-        <div class="c-tag -medium -cancel -bg-white" data-define="define-uesutorando"><span>NONSTYLE</span><img src="./tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
-        <div class="c-tag -medium -cancel -bg-white" data-define="define-241008"><span>2024年8月26日(月)</span><img src="./tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
-        <div class="c-tag -medium -cancel -bg-white" data-define="define-shibuya"><span>江東</span><img src="./tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+      <div class="p-mainHeader__list js-modalBase-tagList">
+        <template class="js-modalBase-tagTemplate">
+          <div class="c-tag -medium -cancel -bg-white"><span class="js-modalBase-inputValue"></span><img class="js-modalBase-cancel" src="./tagCancelBtn.svg" alt="絞り込み条件解除ボタン"/></div>
+        </template>
       </div>
     </div>
     <div class="p-mainContents js-dataInsert">
-      <p class="c-text -bold -size-ss">1～30件のお笑いライブ情報</p>
+      <div class="p-mainContents__count">
+        <p>1</p>
+        <p>～</p>
+        <p class="js-template-count"></p>
+        <p>件のお笑いライブ情報</p>
+      </div>
       <ul class="p-mainContents__list js-template-list">
         <template class="js-template-item">
           <li class="p-mainContents__menu">
             <div class="p-mainContents__head">
               <p class="c-text -size-xxl js-template-item-eventDate"></p>
-              <p class="c-text -size-m js-template-item-openingAndStartTime"></p>
+              <p class="c-text -size-m u-flex"><span>開演</span><span class="js-template-item-start"></span></p>
             </div>
             <ul class="p-mainContents__info">
               <li class="p-mainContents__item -gap-8">
@@ -186,7 +98,7 @@
                 <div class="c-tag -bg-yellow -mini -s"><span class="c-text -size-xs -bold js-template-item-eventer"></span></div>
               </li>
               <li class="p-mainContents__item -mt-16">
-                <p class="c-text -title js-template-item-eventName" data-event-name="data-event-name"></p>
+                <p class="c-text -title js-template-item-eventName" data-event="name"></p>
               </li>
               <li class="p-mainContents__item -mt-16">
                 <p class="c-text -bold -size-xs">会場</p>
@@ -240,5 +152,101 @@
       
 <footer class="l-footer"></footer>
     </div>
+    
+<div class="u-overlay"></div>
+<dialog class="p-modal js-modalBase-dialog">
+  <div class="p-modal__inner">
+    <div class="p-modal-header">
+      <div class="p-modal-close c-icon -close -pointer js-modalBase-close"></div>
+      <p class="c-text -size-l -bold -center u-mt-4">絞り込み条件</p><img class="u-cursor -pointer c-iconImage js-modalBase-clear" src="./modalClear.png"/>
+    </div>
+    <div class="p-modal-content">
+      <ul class="p-modal-content__list">
+        <li class="p-modal-content__item js-radioCheck">
+          <p class="c-text -bold">時間帯</p>
+          <div class="p-panel -modalSearch u-mt-8">
+            <div class="u-flex -gap-24 -pc-gap-48">
+              <div class="c-radio">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="time-morning" name="check-time" value="朝公演" data-time="morning"/>
+                <label class="c-radio-label" for="time-morning">朝公演</label>
+              </div>
+              <div class="c-radio">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="time-daytime" name="check-time" value="昼公演" data-time="daytime"/>
+                <label class="c-radio-label" for="time-daytime">昼公演</label>
+              </div>
+              <div class="c-radio">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="time-night" name="check-time" value="夜公演" data-time="night"/>
+                <label class="c-radio-label" for="time-night">夜公演</label>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="p-modal-content__item js-radioCheck">
+          <p class="c-text -bold">主催</p>
+          <div class="p-panel -modalSearch u-mt-8">
+            <div class="u-flex -gap-12-4 -pc-gap-8-0 -flex-between -flex-wrap">
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-yoshimoto" name="check-eventer" value="吉本興業" data-eventer="yoshimoto"/>
+                <label class="c-radio-label" for="eventer-yoshimoto">吉本興業</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-shochiku" name="check-eventer" value="松竹芸能" data-eventer="shochiku"/>
+                <label class="c-radio-label" for="eventer-shochiku">松竹芸能</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-maseki" name="check-eventer" value="マセキ芸能社" data-eventer="maseki"/>
+                <label class="c-radio-label" for="eventer-maseki">マセキ芸能社</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-horipuro" name="check-eventer" value="ホリプロコム" data-eventer="horipuro"/>
+                <label class="c-radio-label" for="eventer-horipuro">ホリプロコム</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-kdash" name="check-eventer" value="ケイダッシュステージ" data-eventer="kdash"/>
+                <label class="c-radio-label" for="eventer-kdash">ケイダッシュステージ</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-asai" name="check-eventer" value="浅井企画" data-eventer="asai"/>
+                <label class="c-radio-label" for="eventer-asai">浅井企画</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-kpro" name="check-eventer" value="K-PRO" data-eventer="kpro"/>
+                <label class="c-radio-label" for="eventer-kpro">K-PRO</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-uc" name="check-eventer" value="U＆Cプロダクション" data-eventer="uc"/>
+                <label class="c-radio-label" for="eventer-uc">U＆Cプロダクション</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-rasuta" name="check-eventer" value="ラスタ池袋" data-eventer="rasuta"/>
+                <label class="c-radio-label" for="eventer-rasuta">ラスタ池袋</label>
+              </div>
+              <div class="c-radio -div3">
+                <input class="c-radio-input js-radioCheck-radio js-modalBase-radio" type="radio" id="eventer-other" name="check-eventer" value="その他" data-eventer="other"/>
+                <label class="c-radio-label" for="eventer-other">その他</label>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="p-modal-content__item">
+          <p class="c-text -bold">料金</p>
+          <div class="p-panel -modalSearch u-mt-8">
+            <div class="c-range js-rangeSetting">
+              <div class="c-range-value">
+                <p>～</p>
+                <p class="js-rangeSetting-value js-modalBase-rangeValue">上限なし</p>
+                <p>円</p>
+              </div>
+              <input class="c-range-slider js-modalBase-rangeSlider" type="range" name="speed" min="0" max="10000" step="500" list="fee"/>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="p-modal-footer">
+      <button class="c-button js-modalBase-close js-modalBase-inputButton" type="button">絞り込み条件を指定</button>
+    </div>
+  </div>
+</dialog>
   </body>
 </html>
