@@ -866,6 +866,7 @@ li {
   display: flex;
   margin-top: 0.5rem;
   gap: 0.5rem;
+  justify-content: stretch;
 }
 .p-searchArea__item.-block {
   display: block;
