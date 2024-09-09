@@ -14,6 +14,7 @@ body {
   font-size: 1rem;
   font-family: IBM Plex Sans JP, sans-serif;
   user-select: none;
+  -webkit-text-size-adjust: 100%;
 }
 body.-hidden {
   overflow: hidden;
