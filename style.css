@@ -722,7 +722,7 @@ li {
   position: sticky;
   top: 0;
   align-items: center;
-  justify-content: space-between;
+  justify-content: stretch;
   padding: 0.5rem 1rem;
   border-bottom: 0.0625rem solid var(--color-purple-200);
   background-color: var(--color-white);
@@ -780,7 +780,7 @@ li {
 .p-mainContents__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: stretch;
   margin-top: 0.5rem;
   gap: 1.75rem 1.25rem;
 }
