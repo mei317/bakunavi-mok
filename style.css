@@ -887,7 +887,7 @@ li {
   justify-content: center;
 }
 .u-flex.-flex-between {
-  justify-content: space-between;
+  justify-content: stretch;
 }
 .u-flex.-align-center {
   align-items: center;
