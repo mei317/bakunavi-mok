@@ -722,7 +722,7 @@ li {
   position: sticky;
   top: 0;
   align-items: center;
-  justify-content: stretch;
+  justify-content: space-between;
   padding: 0.5rem 1rem;
   border-bottom: 0.0625rem solid var(--color-purple-200);
   background-color: var(--color-white);
@@ -1066,9 +1066,6 @@ li {
     color: var(--color-pink-100);
     font-size: var(--font-size-m);
     transition: all 0.2s ease-in-out;
-  }
-  .c-radio.-div3 {
-    min-width: 13rem;
   }
   .c-radio-label {
     padding-left: 2rem;
