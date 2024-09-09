@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>icn_7</title>
+  <circle class="a" cx="24" cy="24" r="12"/>
+  <path class="a" d="M27,18a3,3,0,0,1-6,0"/>
+  <line class="a" x1="21" y1="23" x2="27" y2="23"/>
+  <line class="a" x1="21" y1="27" x2="27" y2="27"/>
+  <line class="a" x1="24" y1="30" x2="24" y2="23"/>
+</svg>
