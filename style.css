@@ -380,6 +380,9 @@ li {
 .c-icon {
   position: relative;
 }
+.c-icon.-filter {
+  padding-left: 1.375rem;
+}
 .c-icon.-position-cancel {
   position: static;
 }
@@ -410,7 +413,7 @@ li {
   font-size: var(--size-48);
 }
 .c-icon.-search:before {
-  left: 0.75rem;
+  left: 1.375rem;
   content: "";
   font-size: 1.5rem;
 }
