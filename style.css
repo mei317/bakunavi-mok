@@ -566,9 +566,11 @@ li {
 }
 .c-input input[type="date"]:focus:before {
   content: "";
+  text-align: left;
 }
 .c-input input[type="date"]:valid:before {
   content: "";
+  text-align: left;
 }
 .c-input input[type="date"]::-webkit-datetime-edit-fields-wrapper {
   display: none;
