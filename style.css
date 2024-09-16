@@ -545,6 +545,7 @@ li {
 }
 .c-input {
   flex: 1;
+  box-sizing: border-box;
 }
 
 .c-input input[type="text"],
@@ -990,6 +991,8 @@ li {
   justify-content: stretch;
   margin-top: 0.5rem;
   gap: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 .p-searchArea__item.-block {
   display: block;
