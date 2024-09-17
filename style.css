@@ -331,6 +331,9 @@ li {
   transition: all 0.2s ease-in-out;
 }
 .c-button.-search {
+  position: absolute;
+  top: 0;
+  right: 0;
   min-width: 2.875rem;
   border-radius: 0.625rem;
   height: 3rem;
