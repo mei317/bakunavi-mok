@@ -335,7 +335,7 @@ li {
   top: 0;
   right: 0;
   min-width: 2.875rem;
-  border-radius: 0.625rem;
+  border-radius: 0 0.625rem 0.625rem 0;
   height: 3rem;
   border: none;
   padding: 0;
@@ -343,14 +343,14 @@ li {
   color: var(--color-white);
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
-  -webkit-border-radius: 0.625rem;
-  -moz-border-radius: 0.625rem;
-  -ms-border-radius: 0.625rem;
-  -o-border-radius: 0.625rem;
   -webkit-appearance: button;
   text-transform: none;
   overflow: visible;
   margin: 0;
+  -webkit-border-radius: 0 0.625rem 0.625rem 0;
+  -moz-border-radius: 0 0.625rem 0.625rem 0;
+  -ms-border-radius: 0 0.625rem 0.625rem 0;
+  -o-border-radius: 0 0.625rem 0.625rem 0;
 }
 .c-button.-search:hover {
   opacity: 0.8;
