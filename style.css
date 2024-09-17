@@ -347,6 +347,10 @@ li {
   -moz-border-radius: 0.625rem;
   -ms-border-radius: 0.625rem;
   -o-border-radius: 0.625rem;
+  -webkit-appearance: button;
+  text-transform: none;
+  overflow: visible;
+  margin: 0;
 }
 .c-button.-search:hover {
   opacity: 0.8;
