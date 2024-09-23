@@ -13,188 +13,232 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
-    <script src="./main.js"></script>
+    <script src="https://kit.fontawesome.com/148320beb0.js" crossorigin="anonymous"></script>
+    <script crossorigin src="./main.js"></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="js-modalBase js-tagInsert">
+    <div class="l-loading js-buttonLoading u-hidden">
+      <div class="l-loading__circle"><img src="./dotsLoading.svg" /></div>
+    </div>
     <div class="l-wrapper">
       <header class="l-header">
-        <h1 class="c-text -logo">BakuNavi<br />関東圏<br />お笑いライブ検索サイト</h1>
+        <div class="p-headerContents">
+          <a class="p-headerContents__logo" href="/"><img src="./logo_text.svg" /></a>
+        </div>
       </header>
 
       <main class="l-main">
-        <aside class="l-main__sidebar">
-          <div class="p-panel -bg-none"></div>
-        </aside>
-        <article class="l-main__center">
-          <div class="p-mainHeader">
-            <div class="p-panel js-tagInsert-search">
-              <div class="p-searchArea">
-                <div class="p-searchArea__title">
-                  <img class="c-iconImage" loading="lazy" src="./search.svg" style="width: 2rem; height: 2rem" />
-                  <p class="c-text -size-xxxl -bold">お笑いライブを探す</p>
-                </div>
-                <div class="p-searchArea__list">
-                  <div class="p-searchArea__menu">
-                    <p>エリアで探す</p>
-                    <div class="p-searchArea__item -p-6 js-radioCheck">
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-area="area-tokyo" name="check-area" value="東京" id="area-tokyo" />
-                        <label class="c-radio-label -button -pink" for="area-tokyo">東京</label>
-                      </div>
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-area="area-saitama" name="check-area" value="埼玉" id="area-saitama" />
-                        <label class="c-radio-label -button -pink" for="area-saitama">埼玉</label>
-                      </div>
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-area="area-chiba" name="check-area" value="千葉" id="area-chiba" />
-                        <label class="c-radio-label -button -pink" for="area-chiba">千葉</label>
-                      </div>
-                    </div>
+        <div class="l-main__firstView">
+          <img src="./logo_side.svg" />
+          <p>関東お笑いライブ情報検索</p>
+        </div>
+        <div class="l-main__Contents">
+          <aside class="l-main__sidebar">
+            <div class="p-panel -bg-none"></div>
+          </aside>
+          <article class="l-main__center">
+            <div class="p-mainHeader">
+              <div class="p-panel js-tagInsert-search">
+                <div class="p-searchArea">
+                  <div class="p-searchArea__title">
+                    <img class="c-iconImage" loading="lazy" src="./search.svg" style="width: 2rem; height: 2rem" />
+                    <p class="c-text -size-xxxl -bold">お笑いライブを探す</p>
                   </div>
-                  <div class="p-searchArea__menu">
-                    <p>日付で探す</p>
-                    <div class="p-searchArea__item -p-6 js-radioCheck">
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-date="date-today" name="check-date" value="今日" id="date-today" />
-                        <label class="c-radio-label -button -pink" for="date-today">今日</label>
-                      </div>
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-date="date-yesterday" name="check-date" value="明日" id="date-yesterday" />
-                        <label class="c-radio-label -button -pink" for="date-yesterday">明日</label>
-                      </div>
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-date="date-saturday" name="check-date" value="次の土曜" id="date-saturday" />
-                        <label class="c-radio-label -button -pink" for="date-saturday">次の土曜</label>
-                      </div>
-                      <div class="c-radio">
-                        <input class="c-radio-input -button -pink js-radioCheck-radio" type="radio" data-date="date-sunday" name="check-date" value="次の日曜" id="date-sunday" />
-                        <label class="c-radio-label -button -pink" for="date-sunday">次の日曜</label>
-                      </div>
-                    </div>
-                    <div class="p-searchArea__item js-inputPlaceholder js-dateCalender">
-                      <div class="c-input">
-                        <input class="js-dateCalender-open js-inputPlaceholder-input" type="number" data-date="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-searchArea__menu">
-                    <p>芸人で探す</p>
-                    <div class="p-searchArea__item -fixed">
-                      <div class="c-input u-position--relative">
-                        <input type="text" placeholder="芸人・コンビ名を入力してください" data-comedian="comedian-input" value="" />
-                        <button class="c-button -search" type="button"><img src="./search_w.svg" /></button>
+                  <div class="p-searchArea__list">
+                    <div class="p-searchArea__menu">
+                      <p>エリアで探す</p>
+                      <div class="p-searchArea__item -p-6 js-radioCheck">
+                        <div class="c-radio">
+                          <input class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start" type="radio" data-area="area-tokyo" name="check-area" value="東京" id="area-tokyo" />
+                          <label class="c-radio-label -button -pink" for="area-tokyo">東京</label>
+                        </div>
+                        <div class="c-radio">
+                          <input
+                            class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start"
+                            type="radio"
+                            data-area="area-saitama"
+                            name="check-area"
+                            value="埼玉"
+                            id="area-saitama"
+                          />
+                          <label class="c-radio-label -button -pink" for="area-saitama">埼玉</label>
+                        </div>
+                        <div class="c-radio">
+                          <input class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start" type="radio" data-area="area-chiba" name="check-area" value="千葉" id="area-chiba" />
+                          <label class="c-radio-label -button -pink" for="area-chiba">千葉</label>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="p-searchArea__menu">
-                    <div class="p-searchArea__item -block">
-                      <button class="c-button u-flex -flex-center -align-center -gap-8 js-modalBase-open" type="button">
-                        <img class="c-iconImage" src="./filter.svg" />
-                        <p>さらに条件を追加する</p>
-                      </button>
+                    <div class="p-searchArea__menu">
+                      <p>日付で探す</p>
+                      <div class="p-searchArea__item -p-6 js-radioCheck">
+                        <div class="c-radio">
+                          <input class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start" type="radio" data-date="date-today" name="check-date" value="今日" id="date-today" />
+                          <label class="c-radio-label -button -pink" for="date-today">今日</label>
+                        </div>
+                        <div class="c-radio">
+                          <input
+                            class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start"
+                            type="radio"
+                            data-date="date-yesterday"
+                            name="check-date"
+                            value="明日"
+                            id="date-yesterday"
+                          />
+                          <label class="c-radio-label -button -pink" for="date-yesterday">明日</label>
+                        </div>
+                        <div class="c-radio">
+                          <input
+                            class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start"
+                            type="radio"
+                            data-date="date-saturday"
+                            name="check-date"
+                            value="次の土曜"
+                            id="date-saturday"
+                          />
+                          <label class="c-radio-label -button -pink" for="date-saturday">次の土曜</label>
+                        </div>
+                        <div class="c-radio">
+                          <input
+                            class="c-radio-input -button -pink js-radioCheck-radio js-buttonLoading-start"
+                            type="radio"
+                            data-date="date-sunday"
+                            name="check-date"
+                            value="次の日曜"
+                            id="date-sunday"
+                          />
+                          <label class="c-radio-label -button -pink" for="date-sunday">次の日曜</label>
+                        </div>
+                      </div>
+                      <div class="p-searchArea__item js-inputPlaceholder js-dateCalender">
+                        <div class="c-input">
+                          <input class="js-dateCalender-open js-inputPlaceholder-input" type="number" data-date="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="p-searchArea__menu">
+                      <p>芸人で探す</p>
+                      <div class="p-searchArea__item -fixed">
+                        <div class="c-input u-position--relative">
+                          <input type="text" placeholder="芸人・コンビ名を入力してください" data-comedian="comedian-input" value="" />
+                          <button class="c-button -search js-buttonLoading-start" type="button"><img src="./search_w.svg" /></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="p-searchArea__menu">
+                      <div class="p-searchArea__item -block">
+                        <button class="c-button u-flex -flex-center -align-center -gap-8 js-modalBase-open" type="button">
+                          <i class="fa-solid fa-sliders"></i>
+                          <p>さらに条件を追加する</p>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="p-mainHeader__list js-tagInsert-list">
-              <template class="js-tagInsert-template">
-                <div class="c-tag -medium -cancel -bg-white js-tagInsert-dataType">
-                  <span class="js-tagInsert-inputValue"></span><img class="js-tagInsert-cancel" src="./tagCancelBtn.svg" alt="条件解除ボタン" />
-                </div>
-              </template>
-            </div>
-          </div>
-          <div class="p-mainContents js-dataInsert">
-            <div class="p-mainContents__head">
-              <div class="p-mainContents__count js-template-count">
-                <p data-count="start">1</p>
-                <p data-count="start">～</p>
-                <p data-count="count"></p>
-                <p>件のお笑いライブ情報</p>
+              <div class="p-mainHeader__list js-tagInsert-list">
+                <template class="js-tagInsert-template">
+                  <div class="c-tag -medium -cancel -bg-white js-tagInsert-dataType">
+                    <span class="js-tagInsert-inputValue"></span><img class="js-tagInsert-cancel js-buttonLoading-start" src="./tagCancelBtn.svg" alt="条件解除ボタン" />
+                  </div>
+                </template>
               </div>
             </div>
-            <div class="p-mainContents__hidden u-mt-12 u-hidden">
-              <p class="c-text -bold">お探しのライブが見つかりません。</p>
+            <div class="p-mainContents js-dataInsert">
+              <div class="p-mainContents__head">
+                <div class="p-mainContents__count js-template-count">
+                  <p data-count="start">1</p>
+                  <p data-count="start">～</p>
+                  <p data-count="count"></p>
+                  <p>件のお笑いライブ情報</p>
+                </div>
+              </div>
+              <div class="p-mainContents__hidden u-mt-12 u-hidden js-template-hidden">
+                <p class="c-text -bold">お探しのライブ情報が見つかりません</p>
+              </div>
+              <ul class="p-mainContents__list js-template-list">
+                <template class="js-template-item">
+                  <li class="p-mainContents__menu js-template-list">
+                    <div class="p-mainContents__header">
+                      <p class="c-text -size-xxl js-template-item-eventDate"></p>
+                      <p class="c-text -size-m u-flex"><span>開演</span><span class="js-template-item-start"></span></p>
+                    </div>
+                    <ul class="p-mainContents__info">
+                      <li class="p-mainContents__item -flex-between">
+                        <div class="u-flex -gap-8 -align-center">
+                          <div class="c-tag -bg-yellow -mini"><span class="c-text -size-xs -bold js-template-item-area"></span></div>
+                          <div class="c-tag -bg-yellow -mini"><span class="c-text -size-xs -bold js-template-item-eventer"></span></div>
+                        </div>
+                      </li>
+                      <li class="p-mainContents__item -center -mt-16 -min-h-32">
+                        <p class="c-text -bold js-template-item-eventName" data-event="name"></p>
+                      </li>
+                      <li class="p-mainContents__item -mt-16">
+                        <img class="c-iconImage -l" src="./pin.svg" />
+                        <p class="c-text -size-info js-template-item-venue"></p>
+                      </li>
+                      <li class="p-mainContents__item">
+                        <img class="c-iconImage" src="./time.svg" />
+                        <div class="u-flex">
+                          <p class="c-text -size-info">開場&nbsp;</p>
+                          <p class="c-text -size-info js-template-item-open"></p>
+                        </div>
+                        <p class="c-text -bold -size-xs">|</p>
+                        <div class="u-flex">
+                          <p class="c-text -size-info">開演&nbsp;</p>
+                          <p class="c-text -size-info js-template-item-start"></p>
+                        </div>
+                      </li>
+                      <li class="p-mainContents__item">
+                        <img class="c-iconImage" src="./en.svg" />
+                        <div class="u-flex">
+                          <p class="c-text -size-info">前売&nbsp;</p>
+                          <p class="c-text -size-info js-template-item-fee"></p>
+                          <p class="c-text -size-info">円</p>
+                        </div>
+                        <p class="c-text -bold -size-xs">|</p>
+                        <div class="u-flex">
+                          <p class="c-text -size-info">当日&nbsp;</p>
+                          <p class="c-text -size-info js-template-item-currentFee"></p>
+                          <p class="c-text -size-info">円</p>
+                        </div>
+                      </li>
+                      <li class="p-mainContents__item -column">
+                        <p class="c-text -bold -size-xs"></p>
+                        <div class="p-mainContents__itemList js-template-comedianList js-tagInsert-comedian js-accordion">
+                          <template class="js-template-item-comedianItem">
+                            <div class="c-radio -tag">
+                              <input class="c-radio-input" type="radio" data-comedian="" name="check-comedian" value="" disabled="disabled" id="comedian-1" />
+                              <label class="c-text -size-xs -bold js-template-item-comedian" for="comedian-1"></label>
+                              <input class="u-hidden" type="hidden" data-record="1" />
+                            </div>
+                          </template>
+                        </div>
+                      </li>
+                      <li class="p-mainContents__item -last-item">
+                        <a class="p-mainContents__itemButton js-template-item-ticketUrl" href="#" target="_blank"
+                          ><i class="fa-solid fa-link"></i><span class="u-ml-8">外部サイトでチケットを購入する</span></a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </template>
+              </ul>
             </div>
-            <ul class="p-mainContents__list js-template-list">
-              <template class="js-template-item">
-                <li class="p-mainContents__menu js-template-list">
-                  <div class="p-mainContents__header">
-                    <p class="c-text -size-xxl js-template-item-eventDate"></p>
-                    <p class="c-text -size-m u-flex"><span>開演</span><span class="js-template-item-start"></span></p>
-                  </div>
-                  <ul class="p-mainContents__info">
-                    <li class="p-mainContents__item -flex-between">
-                      <div class="u-flex -gap-8 -align-center">
-                        <div class="c-tag -bg-yellow -mini"><span class="c-text -size-xs -bold js-template-item-area"></span></div>
-                        <div class="c-tag -bg-yellow -mini"><span class="c-text -size-xs -bold js-template-item-eventer"></span></div>
-                      </div>
-                    </li>
-                    <li class="p-mainContents__item -center -mt-16 -min-h-32">
-                      <p class="c-text -title js-template-item-eventName" data-event="name"></p>
-                    </li>
-                    <li class="p-mainContents__item -mt-16">
-                      <img class="c-iconImage -l" src="./pin.svg" />
-                      <p class="c-text -size-info js-template-item-venue"></p>
-                    </li>
-                    <li class="p-mainContents__item">
-                      <img class="c-iconImage" src="./time.svg" />
-                      <div class="u-flex">
-                        <p class="c-text -size-info">開場&nbsp;</p>
-                        <p class="c-text -size-info js-template-item-open"></p>
-                      </div>
-                      <p class="c-text -bold -size-xs">|</p>
-                      <div class="u-flex">
-                        <p class="c-text -size-info">開演&nbsp;</p>
-                        <p class="c-text -size-info js-template-item-start"></p>
-                      </div>
-                    </li>
-                    <li class="p-mainContents__item">
-                      <img class="c-iconImage" src="./en.svg" />
-                      <div class="u-flex">
-                        <p class="c-text -size-info">前売&nbsp;</p>
-                        <p class="c-text -size-info js-template-item-fee"></p>
-                        <p class="c-text -size-info">円</p>
-                      </div>
-                      <p class="c-text -bold -size-xs">|</p>
-                      <div class="u-flex">
-                        <p class="c-text -size-info">当日&nbsp;</p>
-                        <p class="c-text -size-info js-template-item-currentFee"></p>
-                        <p class="c-text -size-info">円</p>
-                      </div>
-                    </li>
-                    <li class="p-mainContents__item -column">
-                      <p class="c-text -bold -size-xs"></p>
-                      <div class="u-flex -flex-wrap -gap-8 js-template-comedianList js-tagInsert-comedian">
-                        <template class="js-template-item-comedianItem">
-                          <div class="c-radio -tag">
-                            <input class="c-radio-input" type="radio" data-comedian="" name="check-comedian" value="" id="comedian-1" />
-                            <label class="c-text -size-xs -bold u-cursor -pointer js-template-item-comedian" for="comedian-1"></label>
-                            <input class="u-hidden" data-record="1" />
-                          </div>
-                        </template>
-                      </div>
-                    </li>
-                    <li class="p-mainContents__item u-flex -flex-center u-mt-16">
-                      <a class="p-mainContents__itemButton js-template-item-ticketUrl" href="#" target="_blank">外部サイトでチケットを購入する</a>
-                    </li>
-                  </ul>
-                </li>
-              </template>
-            </ul>
-          </div>
-        </article>
-        <aside class="l-main__sidebar">
-          <div class="p-panel -bg-none"></div>
-        </aside>
+          </article>
+          <aside class="l-main__sidebar">
+            <div class="p-panel -bg-none"></div>
+          </aside>
+        </div>
       </main>
 
       <footer class="l-footer">
         <div class="p-footerContents">
-          <div class="p-footerContents__logo"><img src="./logo_side.svg" /></div>
-          <div class="p-footerContents__link"><a class="c-text" href="/privacypolicy">プライバシーポリシー</a></div>
+          <a class="p-footerContents__logo" href="#"><img src="./logo_text.svg" /></a>
+          <div class="p-footerContents__link">
+            <a href="/privacypolicy"><i class="fa-solid fa-up-right-from-square"></i><span class="c-text u-ml-4">プライバシーポリシー</span></a>
+          </div>
           <div class="p-footerContents__copyLight">
             <p class="c-text">&copy; 2024 BakuNavi. All Rights Reserved.</p>
           </div>
